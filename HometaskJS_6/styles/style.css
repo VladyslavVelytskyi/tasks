@@ -1,0 +1,584 @@
+@import url('https://fonts.googleapis.com/css?family=Baloo+Thambi');
+@import url('https://fonts.googleapis.com/css?family=Poiret+One');
+
+body {
+    margin: 0;
+    padding: 0;
+    background: rgb(249, 249, 249);
+    font: bold 20px "Poiret One", sans-serif;
+}
+
+.g-container {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+button {
+    border: 1px solid rgb(255, 255, 255);
+    cursor: pointer;
+}
+
+button:hover {
+    color: white;
+    background-color: rgba(255, 255, 255, 0) !important;
+}
+
+button:active { transform: translateY(3px); }
+
+/* header ------------------------------------------------------------------------------------------------------------*/
+.g-header {
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    box-sizing: border-box;
+    height: 80px;
+    width: 100%;
+    padding-top: 19px;
+    background: white;
+}
+
+.name { font: 40px "Baloo Thambi", sans-serif; }
+
+.header__h1 {
+    display: inline-block;
+    margin: 0;
+    word-spacing: 10px;
+}
+
+.g-header ul {
+    float: right;
+    margin: 0;
+    padding: 0;
+}
+
+.g-header li {
+    display: inline-block;
+    margin-left: 10px;
+    height: 50px;
+    width: 50px;
+}
+
+.g-header li:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.header__constructor {
+    position: relative;
+    top: 27px;
+    display: none;
+    text-align: center;
+    color: white;
+}
+
+.header__constructor h2 {
+    margin: 0;
+    font: bold 25px "Poiret One", sans-serif;
+}
+
+.header__basket {
+    position: relative;
+    top: 20px;
+    display: none;
+    text-align: center;
+    color: white;
+}
+
+.header__basket h2 {
+    position: relative;
+    top: 3px;
+    float: left;
+    margin: 0;
+    font: bold 25px "Poiret One", sans-serif;
+}
+
+.header__basket button {
+    float: right;
+    box-sizing: border-box;
+    height: 40px;
+    padding-left: 5px;
+    border-radius: 3px;
+    font: bold 20px "Poiret One", sans-serif;
+    background: rgb(255, 255, 255);
+}
+
+#menu { background: url(../img/icons.svg) -140px 0 / 190px 50px no-repeat; }
+
+#constructor { background: url(../img/icons.svg) -70px 0 / 190px 50px no-repeat; }
+
+#basket {
+    position: relative;
+    background: url(../img/icons.svg) 0 0 / 190px 50px no-repeat;
+}
+
+#basket div {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    box-sizing: border-box;
+    width: 20px;
+    height: 20px;
+    border: none;
+    border-radius: 50%;
+    background-color: rgb(177, 63, 53);
+    color: white;
+    font-size: 15px;
+    text-align: center;
+    padding-top: 2px;
+}
+
+
+
+/* shadow ------------------------------------------------------------------------------------------------------------*/
+#shadow {
+    position: absolute;
+    z-index: 999;
+    box-sizing: border-box;
+    height: 100%;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    opacity: 0.5;
+    background: rgb(0, 0, 0);
+}
+
+
+
+/*  pizza-list -------------------------------------------------------------------------------------------------------*/
+.price-list {
+    position: relative;
+    top: 80px;
+}
+
+.price-list__type {
+    box-sizing: border-box;
+    margin: 0 auto;
+    background: rgb(30, 109, 124);
+    -webkit-transition-duration: .8s;
+    -moz-transition-duration: .8s;
+    -ms-transition-duration: .8s;
+    -o-transition-duration: .8s;
+    transition-duration: .8s;
+
+    -webkit-transition-property: width, height;
+    -moz-transition-property: width, height;
+    -o-transition-property: width, height;
+    transition-property: width, height;
+}
+
+.price-list__type--prompt {
+    position: fixed;
+    left: calc((100% - 1000px) / 2);
+    z-index: 1000;
+    height: 600px;
+    width: 1000px;
+}
+
+.price-list__type--prompt h1,
+.price-list__type--prompt p {
+    text-align: center;
+    font-weight: normal;
+    color: white;
+}
+
+.price-list__type--prompt p {
+    margin-top: 80px;
+    font-size: 20px;
+}
+
+.price-list__type--menu {
+    position: relative;
+    height: 80px;
+    width: 100%;
+    z-index: 10;
+}
+
+.price-list__type--menu h1,
+.price-list__type--menu p,
+.price-list__type--menu .type__container span,
+.price-list__type--prompt .type__sort,
+.type__sort-list #sort-ingredients,
+.type__sort-ingredients #sort-list { display: none; }
+
+.price-list__type--menu .type__container {
+    top: 5px;
+    display: inline-block;
+    text-align: left;
+    transition-duration: .8s;
+    transition-property: top;
+}
+
+.type__container {
+    position: relative;
+    top: 110px;
+    text-align: center;
+}
+
+.type__container span {
+    position: relative;
+    display: inline-block;
+    font-size: 20px;
+    color: white;
+    opacity: 0;
+    transition-duration: .5s;
+}
+
+#name-block {
+    right: 300px;
+    transition-property: right, opacity;
+}
+
+#name-list {
+    left: 300px;
+    transition-property: left, opacity;
+}
+
+.type-container__button {
+    position: relative;
+    top: 10px;
+    height: 40px;
+    width: 40px;
+    margin: 5px;
+    padding: 4px;
+    border: 1px solid rgb(249, 249, 249);
+    border-radius: 3px;
+    background: none;
+}
+
+.type-container__button--block div {
+    float: left;
+    display: inline-block;
+    box-sizing: border-box;
+    height: 14px;
+    width: 14px;
+    margin: 0 2px 2px 0;
+    border: 1px solid rgb(249, 249, 249);
+}
+
+.type-container__button--block div:nth-child(2n) { margin-right: 0; }
+
+.type-container__button--block div:nth-child(n + 2) { margin-bottom: 0; }
+
+.type-container__button--list div {
+    position: relative;
+    top: 3px;
+    box-sizing: border-box;
+    height: 3px;
+    width: 30px;
+    margin-bottom: 7px;
+    border: 1px solid rgb(249, 249, 249);
+    background: rgb(249, 249, 249);
+}
+
+.type__sort {
+    position: relative;
+    top: 20px;
+    float: right;
+    display: inline-block;
+}
+
+.type__sort label {
+    font: bold 20px "Poiret One", sans-serif;
+    color: rgb(255, 255, 255);
+}
+
+.type__sort select {
+    box-sizing: border-box;
+    height: 40px;
+    width: 200px;
+    padding-left: 5px;
+    border: 1px solid rgb(249, 249, 249);
+    border-radius: 3px;
+    font: normal 20px "Poiret One", sans-serif;
+}
+
+.type__sort option {
+    padding: 5px;
+    border-radius: 3px;
+}
+
+.type__sort-ingredients #sort-ingredients,
+.type__sort-list #sort-list { display: inline-block; }
+
+
+
+/* pizza block -------------------------------------------------------------------------------------------------------*/
+.price-list__catalog {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 30px 10px 30px 30px;
+    background: rgb(255, 255, 255);
+}
+
+.price-list__catalog > ul {
+    margin: 0 0 10px 25px;
+    padding: 0;
+    list-style: url(../img/pizza-list-style.svg);
+}
+
+.price-list__catalog ul > li { margin-top: 15px; }
+
+.pizza-name { font-size: 30px; }
+
+.pizza-block,
+.pizza-block--basket {
+    position: relative;
+    display: inline-block;
+    box-sizing: border-box;
+    height: 300px;
+    width: 300px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    letter-spacing: 1px;
+    color: rgb(255, 255, 255);
+    background-repeat: no-repeat;
+    background-position: 50% 20%;
+    background-size: 0;
+    transition-property: margin-bottom;
+    transition-duration: 0.5s;
+}
+
+.block-animate--open { animation: flipBlock .5s 0s 1 forwards; }
+
+.block-animate--close { animation: flipBlockReverse .5s 0s 1 forwards; }
+
+.pizza-block h3,
+.pizza-block--basket h3 {
+    margin: 3px 0 0 0;
+    text-align: center;
+    color: rgb(255, 255, 255);
+}
+
+.pizza-block > ul,
+.pizza-block--basket > ul {
+    position: absolute;
+    bottom: 15px;
+    box-sizing: border-box;
+    width: 260px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.pizza-block ul li,
+.pizza-block--basket ul li { font: normal 16px "Poiret One", sans-serif; }
+
+.pizza-block > ul li:last-child,
+.pizza-block--basket >  ul li:last-child { font: bold 20px "Poiret One", sans-serif; }
+
+.pizza-block ul li span,
+.pizza-block--basket ul li span { text-decoration: underline; }
+
+.pizza-block > button,
+.pizza-block--basket > button {
+    position: absolute;
+    bottom: 15px;
+    right: 20px;
+    font: bold 16px "Poiret One", sans-serif;
+    background-color: rgba(255, 255, 255, 1);
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+
+.pizza-block .pizza-block__ingredients,
+.pizza-block--basket .pizza-block__ingredients {
+    position: absolute;
+    bottom: -150px;
+    display: none;
+    box-sizing: border-box;
+    height: 150px;
+    width: 260px;
+    padding: 10px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    border-radius: 0 0 5px 5px;
+    background-color: inherit;
+    box-shadow: inset 0 2px 2px black;
+    transition-property: bottom;
+    transition-duration: 0.5s;
+}
+
+.pizza-block__ingredients ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.pizza-block__ingredients li { position: relative; }
+
+.ingredient-list__counter {
+    position: absolute;
+    right: -10px;
+    display: inline-block;
+    font: bold 16px "Poiret One", sans-serif;
+}
+
+.ingredient-list__counter input {
+    width: 20px;
+    border: 0;
+    border-radius: 2px;
+    text-align: center;
+    font: inherit;
+}
+
+.ingredient-list__counter input:disabled { background-color: white; }
+
+.ingredient-list__counter button {
+    border: none;
+    font: inherit;
+    color: white;
+    background: none;
+}
+
+
+
+/* animations --------------------------------------------------------------------------------------------------------*/
+@keyframes flipBlock {
+    0% { transform: scaleX(-1) scaleX(-1); }
+    50% { background-size: 0; }
+    100% {
+        height: 450px;
+        background-size: 80%;
+    }
+}
+
+@keyframes flipBlockReverse {
+    0% {
+        height: 450px;
+        background-size: 80%;
+    }
+    50% { background-size: 0; }
+    100% {
+        height: 300px;
+        transform: scaleX(-1) scaleX(-1);
+    }
+}
+
+
+
+/* constructor -------------------------------------------------------------------------------------------------------*/
+.price-list__catalog #pizza-constructor {
+    position: relative;
+    height: 620px;
+    width: 960px;
+    margin-bottom: 20px;
+}
+
+.pizza-constructor__list {
+    float: left;
+    display: inline-block;
+    box-sizing: border-box;
+    width: 300px;
+    height: 300px;
+    margin-bottom: 20px;
+    padding: 20px;
+    overflow-y: scroll;
+    background: rgb(30, 109, 124);
+    border-radius: 5px;
+}
+
+.pizza-constructor__list ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    color: white;
+}
+
+.pizza-constructor__list ul li { font: bold 16px "Poiret One", sans-serif; }
+
+.pizza-constructor__list ul li:first-child { margin-top: 0; }
+
+.pizza-constructor__list .ingredient-list__counter {
+    position: relative;
+    float: right;
+    display: inline-block;
+    font: bold 16px "Poiret One", sans-serif;
+}
+
+.pizza-constructor__view {
+    width: 620px;
+    display: inline-block;
+    float: right;
+    margin-right: 20px;
+    background-image: url(../img/base.svg);
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100%;
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+}
+
+.pizza-constructor__view img {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.pizza-constructor__properties {
+    float: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+    width: 300px;
+    height: 300px;
+    background: rgb(30, 109, 124);
+    border-radius: 5px;
+    position: relative;
+    padding: 20px;
+    color: white;
+}
+
+.pizza-constructor__properties > * {
+    width: 100%;
+    vertical-align: middle;
+}
+
+.pizza-constructor__properties button {
+    width: 260px;
+    box-sizing: border-box;
+    font: bold 16px "Poiret One", sans-serif;
+    background-color: white;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+
+.pizza-constructor__properties input {
+    width: 150px;
+    height: inherit;
+    float: right;
+    box-sizing: border-box;
+    font: bold 18px "Poiret One", sans-serif;
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    text-align: center;
+}
+
+.price-list__catalog #pizza-constructor > img {
+    width: 100%;
+    position: absolute;
+    bottom: 100px;
+    z-index: 99;
+}
+
+.price-list__catalog #pizza-constructor div div img { width: inherit; }
+
+.price-list__catalog #pizza-constructor div div p {
+    font: bold 16px "Poiret One", sans-serif;
+    text-align: center;
+    margin: 0;
+}
+
+
+
+/* basket ------------------------------------------------------------------------------------------------------------*/

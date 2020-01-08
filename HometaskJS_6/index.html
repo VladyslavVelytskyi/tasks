@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+<section id="shadow"></section>
+<header class="header">
+    <div class="container">
+        <h1 class="header__h1"><span class="name">Task 5's pizza</span></h1>
+        <ul>
+            <li id="menu" title="Меню"></li>
+            <li id="constructor" title="Конструктор пиццы"></li>
+            <li id="basket" title="Корзина"><div>0</div></li>
+        </ul>
+    </div>
+</header>
+<main class="price-list">
+    <header class="price-list__type price-list__type--prompt">
+        <div class="container">
+            <h1>добро пожаловать в пиццерию<br>
+                <span class="name">Task 5's pizza</span>
+            </h1>
+            <p>выберите отображение меню</p>
+            <div class="type__container g-header__menu">
+                <span id="name-block">плитка</span>
+                <button class="type-container__button type-container__button--block" id="button-block">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </button>
+                <button class="type-container__button type-container__button--list" id="button-list">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </button>
+                <span id="name-list">список</span>
+            </div>
+            <div class="type__sort g-header__menu">
+                <label for="sort-list">сортировать по</label>
+                <select id="sort-list">
+                    <option value="by-price">цене</option>
+                    <option value="by-name">наименованию</option>
+                </select>
+                <label for="sort-ingredients">сортировать по ингредиентам</label>
+                <select id="sort-ingredients"></select>
+            </div>
+            <div class="header__constructor">
+                <h2>Создайте свою пиццу</h2>
+            </div>
+            <div class="header__basket">
+                <h2>Ваш заказ составляет: <span id="fullPrice">0.00 грн</span></h2>
+                <button id="pay">Оформить заказ</button>
+            </div>
+        </div>
+    </header>
+    <section>
+        <div class="container">
+            <section class="price-list__catalog" id="catalog"></section>
+        </div>
+    </section>
+</main>
+    <script src="scripts/pizza.js" defer></script>
+    <script src="scripts/load.js" defer></script>
+    <script src="scripts/prompt.js" defer></script>
+    <script src="scripts/build.js" defer></script>
+    <script src="scripts/sort.js" defer></script>
+    <script src="scripts/constructor.js" defer></script>
+    <script src="scripts/basket.js" defer></script>
+</body>
+</html>

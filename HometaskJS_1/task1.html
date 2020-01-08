@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="task1.css">
+</head>
+<body>
+    <section class="task task1">
+        <header>
+            <h2>Task 1</h2>
+            <p>enter your number and show how two-dimensional array looks like</p>
+            <p>press F12 / Console to see the array</p>
+        </header>
+        <section>
+            <input type="text" placeholder="input number" id="numberField">
+            <input type="button" value="Create table" id="createTab">
+            <input type="button" value="Clear" id="clearTab">
+            <input type="button" value="View code" id="viewCode">
+            <div id="container"></div>
+            <pre id="code">
+            function spiralArr(num) {
+                //set array size
+                let vertex = Math.round(Math.sqrt(num));
+                let horizon = vertex;
+                if (vertex * vertex < num)
+                    horizon = vertex + 1;
+
+                let arr = [];
+                arr.length = vertex;
+
+                for (let i = 0; i < vertex; i++) {
+                    arr[i] = [];
+                    arr[i].length = horizon;
+                }
+
+                //set sequence of numbers
+                let arrNum = [];
+                for (let i = 0; i < num; i++) arrNum[i] = i + 1;
+
+                //coordinate steps
+                let quarter = 0;
+                let round = 1;
+
+                let yi = 0;
+                let xi = 0;
+
+                //create array
+                for (let step = 0; step < arrNum.length; ) {
+
+                    if (quarter === 0) {
+                        for (let j = 0; j < arr[yi].length; j++) {
+                            if ( !arr[yi][j] )
+                                arr[yi][j] = arrNum[step++];
+                        }
+                        ++quarter;
+
+                    } else if (quarter === 1) {
+                        for (let j = 0; j < vertex; j++) {
+                            if ( !arr[j][arr[j].length - round] )
+                                arr[j][arr[j].length - round] = arrNum[step++];
+                        }
+                        ++quarter;
+
+                    } else if (quarter === 2) {
+                        for (let j = arr[vertex - round].length - round; j >= 0; j--) {
+                            if ( !arr[vertex - round][j] )
+                                arr[vertex - round][j] = arrNum[step++];
+                        }
+                        ++quarter;
+
+                    } else if (quarter === 3) {
+                        for (let j = arr.length - round; j > 0; j--) {
+                            if ( !arr[j][xi] )
+                                arr[j][xi] = arrNum[step++];
+                        }
+                        quarter = 0;
+                        ++yi;
+                        ++xi;
+                        ++round;
+                    }
+                }
+
+                //replace underfined on "-"
+                for (let i = 0; i < arr.length; i++) {
+                    for (let j = 0; j < arr[i].length; j++) {
+                        if (arr[i][j] === undefined)
+                            arr[i][j] = "-";
+                    }
+                }
+                //
+                return arr;
+            }
+            </pre>
+        </section>
+    </section>
+    <section class="task task2">
+        <header>
+            <h2>Task 2</h2>
+            <p>enter the character of the play and excert from it</p>
+            <p>you can take text here - <a href="https://ilibrary.ru/text/473/p.1/index.html" target="_blank">Ревизор</a></p>
+            <p>press F12 / Console to see the text in code</p>
+
+        </header>
+        <section class=" clearfix">
+            <div>
+                <input type="text" id="person" placeholder="input person">
+                <input type="button" id="add" value="Add person">
+                <textarea id="scenario" placeholder="input scenario"></textarea>
+                <input type="button" id="createText" value="Create text">
+            </div>
+            <div>
+                <ol id="personsList"></ol>
+                <div id="outputText"></div>
+            </div>
+        </section>
+
+        <section>
+            <input type="button" value="View code" id="viewCode2">
+            <pre id="code2">
+            function checkTextLines(roles, textLines) {
+                let finalText = "";
+
+                //role order in text
+                roles.sort(function (a, b) {
+                    return textLines.indexOf(a) - textLines.indexOf(b);
+                });
+
+                //make array of text strings
+                textLines = textLines.split('\n');
+
+                //create new text
+                for(let i = 0; i < roles.length; i++) {
+                    let role = "";
+                    role = roles[i] + ":\n";
+
+                    for (let j = 0; j < textLines.length; j++) {
+                        if (textLines[j].indexOf(roles[i]) === 0) {
+                            textLines[j] = j + 1 + ")" + textLines[j].substr(roles[i].length + 1);
+                            role += "\n" + textLines[j] + "\n";
+                        }
+                    }
+                finalText += role + "\n";
+                }
+
+                //
+                return finalText;
+            }
+            </pre>
+        </section>
+    </section>
+    <script src="task1.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,265 @@
+@import url('https://fonts.googleapis.com/css?family=Baloo+Thambi');
+@import url('https://fonts.googleapis.com/css?family=Poiret+One');
+
+body {
+    margin: 0;
+    padding: 0;
+    background: rgb(249, 249, 249);
+    font: bold 20px "Poiret One", sans-serif;
+}
+
+
+/*--------------------------------------------------------------------------------------------------------------------*/
+.g-container {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+.g-header {
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    box-sizing: border-box;
+    height: 80px;
+    width: 100%;
+    padding-top: 19px;
+    background: white;
+}
+
+.name { font: 40px "Baloo Thambi", sans-serif; }
+
+.header__h1 {
+    margin: 0;
+    word-spacing: 10px;
+}
+
+/*--------------------------------------------------------------------------------------------------------------------*/
+#shadow {
+    position: absolute;
+    z-index: 999;
+    box-sizing: border-box;
+    height: 100%;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    opacity: 0.5;
+    background: rgb(0, 0, 0);
+}
+
+
+
+/*--------------------------------------------------------------------------------------------------------------------*/
+.price-list {
+    position: relative;
+    top: 80px;
+}
+
+.price-list__type {
+    box-sizing: border-box;
+    margin: 0 auto;
+    background: rgb(30, 109, 124);
+    transition-duration: .8s;
+    transition-property: width, height;
+}
+
+.price-list__type--prompt {
+    position: fixed;
+    left: calc((100% - 1000px) / 2);
+    z-index: 1000;
+    height: 600px;
+    width: 1000px;
+}
+
+.price-list__type--prompt h1,
+.price-list__type--prompt p {
+    text-align: center;
+    font-weight: normal;
+    color: white;
+}
+
+.price-list__type--prompt p {
+    margin-top: 80px;
+    font-size: 20px;
+}
+
+.price-list__type--menu {
+    position: relative;
+    height: 80px;
+    width: 100%;
+    z-index: 10;
+}
+
+.price-list__type--menu h1,
+.price-list__type--menu p,
+.price-list__type--menu .type__container span,
+.price-list__type--prompt .type__sort,
+.type__sort-list #sort-ingredients,
+.type__sort-ingredients #sort-list { display: none; }
+
+.price-list__type--menu .type__container {
+    top: 5px;
+    display: inline-block;
+    text-align: left;
+    transition-duration: .8s;
+    transition-property: top;
+}
+
+.type__container {
+    position: relative;
+    top: 110px;
+    text-align: center;
+}
+
+.type__container span {
+    position: relative;
+    display: inline-block;
+    font-size: 20px;
+    color: white;
+    opacity: 0;
+    transition-duration: .5s;
+}
+
+#name-block {
+    right: 300px;
+    transition-property: right, opacity;
+}
+
+#name-list {
+    left: 300px;
+    transition-property: left, opacity;
+}
+
+.type-container__button {
+    position: relative;
+    top: 10px;
+    height: 40px;
+    width: 40px;
+    margin: 5px;
+    padding: 4px;
+    border: 1px solid rgb(249, 249, 249);
+    border-radius: 3px;
+    background: none;
+}
+
+.type-container__button--block div {
+    float: left;
+    display: inline-block;
+    box-sizing: border-box;
+    height: 14px;
+    width: 14px;
+    margin: 0 2px 2px 0;
+    border: 1px solid rgb(249, 249, 249);
+}
+
+.type-container__button--block div:nth-child(2n) { margin-right: 0; }
+
+.type-container__button--block div:nth-child(n + 2) { margin-bottom: 0; }
+
+.type-container__button--list div {
+    position: relative;
+    top: 3px;
+    box-sizing: border-box;
+    height: 3px;
+    width: 30px;
+    margin-bottom: 7px;
+    border: 1px solid rgb(249, 249, 249);
+    background: rgb(249, 249, 249);
+}
+
+.type__sort {
+    position: relative;
+    top: 20px;
+    float: right;
+    display: inline-block;
+}
+
+.type__sort label {
+    font: bold 20px "Poiret One", sans-serif;
+    color: rgb(255, 255, 255);
+}
+
+.type__sort select {
+    box-sizing: border-box;
+    height: 40px;
+    width: 200px;
+    padding-left: 5px;
+    border: 1px solid rgb(249, 249, 249);
+    border-radius: 3px;
+    font: normal 20px "Poiret One", sans-serif;
+}
+
+.type__sort option {
+    padding: 5px;
+    border-radius: 3px;
+}
+
+.type__sort-ingredients #sort-ingredients,
+.type__sort-list #sort-list { display: inline-block; }
+
+
+
+/*--------------------------------------------------------------------------------------------------------------------*/
+.price-list__catalog {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 30px;
+    background: rgb(255, 255, 255);
+}
+
+.price-list__catalog > ul {
+    margin: 0 0 10px 0;
+    padding: 0;
+    list-style: inside url(../img/pizza-list-style.svg);
+}
+
+.price-list__catalog ul > li { margin-top: 10px; }
+
+.pizza-name { font-size: 30px; }
+
+.pizza-block {
+    position: relative;
+    float: left;
+    box-sizing: border-box;
+    height: 450px;
+    width: 300px;
+    margin-right: calc((100% - 900px) / 2);
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: rgb(255, 255, 255);
+    letter-spacing: 1px;
+    background-repeat: no-repeat;
+    background-position: 50% 20%;
+    background-size: 80%;
+}
+
+.pizza-block:nth-child(3n) { margin-right: 0; }
+
+.clearfix {
+    display: table;
+    content: "";
+    clear: both;
+}
+
+.pizza-block h3 {
+    margin: 3px 0 0 0;
+    text-align: center;
+    color: rgb(255, 255, 255);
+}
+
+.pizza-block ul {
+    position: absolute;
+    bottom: 5px;
+    box-sizing: border-box;
+    width: 260px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.pizza-block ul li {
+    font-size: 16px;
+    font-weight: normal;
+}
+
+.pizza-block ul li:last-child { font: bold 20px "Poiret One", sans-serif; }

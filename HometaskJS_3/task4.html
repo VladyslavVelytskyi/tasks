@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body,
+        button { font: 14px monospace; }
+
+        body, canvas {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        h1,
+        p,
+        table { position: absolute; }
+
+        h1, p {
+            width: 100vw;
+            text-align: center;
+        }
+
+        p { top: 40px; }
+
+        table {
+            bottom: 0;
+            padding: 10px;
+        }
+
+        /*new code*/
+        td:first-child { text-align: center; }
+        /*
+        tr:nth-child(odd) td:first-child { text-align: center; }
+        */
+
+        button {
+            border: none;
+            background: none;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        .table--hide { top: calc(100vh - 35px); }
+    </style>
+</head>
+<body>
+    <h1 id="header">Task 4</h1>
+    <p>Press "hide" to hide the table</p>
+    <canvas id="field"></canvas>
+    <table id="table">
+        <thead>
+            <tr>
+                <th width="20"><button id="button">hide</button></th>
+                <th width="75">name</th>
+                <th width="130">color</th>
+                <th width="75">square</th>
+            </tr>
+        </thead>
+        <tbody id="tbody"></tbody>
+    </table>
+    <script src="task4.js"></script>
+</body>
+</html>

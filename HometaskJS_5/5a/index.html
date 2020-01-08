@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+<section id="shadow"></section>
+<header class="header">
+    <div class="container">
+        <h1 class="header__h1"><span class="name">Task 5's pizza</span></h1>
+    </div>
+</header>
+<main class="price-list">
+    <header class="price-list__type price-list__type--prompt">
+        <div class="container">
+            <h1>добро пожаловать в пиццерию<br>
+                <span class="name"> Task 5's pizza</span>
+            </h1>
+            <p>выберите отображение меню</p>
+            <div class="type__container">
+                <span id="name-block">плитка</span>
+                <button class="type-container__button type-container__button--block" id="button-block">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </button>
+                <button class="type-container__button type-container__button--list" id="button-list">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </button>
+                <span id="name-list">список</span>
+            </div>
+            <div class="type__sort">
+                <label for="sort-list">сортировать по</label>
+                <select id="sort-list">
+                    <option value="by-price">цене</option>
+                    <option value="by-name">наименованию</option>
+                </select>
+                <label for="sort-ingredients">сортировать по ингредиентам</label>
+                <select id="sort-ingredients"></select>
+            </div>
+        </div>
+    </header>
+    <section>
+        <div class="container">
+            <section class="price-list__catalog clearfix" id="catalog"></section>
+        </div>
+    </section>
+
+</main>
+    <script src="scripts/pizza.js"></script>
+    <script src="scripts/build.js"></script>
+</body>
+</html>

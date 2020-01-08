@@ -1,0 +1,115 @@
+.task {
+    box-sizing: border-box;
+    width: 900px;
+    margin: 0 auto;
+    padding: 10px;
+    border: 1px solid black;
+    text-align: center;
+}
+
+.task section {
+    width: 100%;
+    margin-top: 20px;
+}
+
+section h2 { font-family: sans-serif; }
+
+input,
+textarea {
+    box-sizing: border-box;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 3px;
+    background: white;
+}
+
+input[type="button"]:hover {
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    color: rgba(0, 0, 0, 0.5);
+}
+
+input[type="button"]:active {
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+}
+
+textarea { margin: 10px 0; }
+
+#container {
+    display: none;
+    width: 100%;
+    overflow: auto;
+}
+
+table, tr, td {
+    padding: 5px;
+    border: 1px solid black;
+    border-collapse: collapse;
+    text-align: center;
+    vertical-align: middle;
+}
+
+table { margin: 50px auto; }
+
+td {
+    width: 50px;
+    height: 50px;
+}
+
+pre {
+    display: none;
+    width: 100%;
+    text-align: left;
+}
+
+
+
+
+.task2 { margin-top: 20px; }
+
+.task2 div {
+    float: left;
+    display: inline-block;
+    box-sizing: border-box;
+    width: 50%;
+}
+
+.task2 div:last-child {
+    float: right;
+    padding-left: 50px;
+    text-align: left;
+}
+
+.clearfix {
+    display: table;
+    content: "";
+    clear: both;
+}
+
+a { color: black; }
+
+#scenario {
+    width: 100%;
+    height: 300px;
+    margin-top: 10px;
+    resize: none;
+}
+
+#person {
+    text-align: left;
+    float: left;
+}
+
+#add,
+#createText { float: right; }
+
+#outputText {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 10px;
+}
+
+
+
+
+

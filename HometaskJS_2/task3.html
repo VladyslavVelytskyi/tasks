@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        section,
+        footer {
+            text-align: center;
+            font-family: sans-serif;
+            margin-top: 20px;
+        }
+
+        table, tr, td, th {
+            border: 1px solid white;
+            border-collapse: collapse;
+            padding: 6px 10px;
+        }
+
+        table {
+            margin: 0 auto;
+            background: #00897b;
+        }
+
+        thead,
+        button {
+            color: white;
+            background: #005b4f;
+        }
+
+        tbody { text-align: left; }
+
+        button { border: none; }
+
+        .newPrice { background: #4ebaaa; }
+
+        .description,
+        footer { font-size: .6em; }
+    </style>
+</head>
+<body>
+    <section>
+        <h2>Task 3</h2>
+        <p>push &#9206; or &#9207;</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Наименование</th>
+                    <th>Цена / грн.<button id="sortPrice">&#9206;</button></th>
+                    <th>Отзывы <button id="sortReview">&#9206;</button></th>
+                </tr>
+            </thead>
+            <tbody id="productsTable"></tbody>
+        </table>
+    </section>
+    <footer>[FE-JS Ext Winter 18] Vladislav Velytskyi Task-3</footer>
+    <script src="task3.js"></script>
+</body>
+</html>
